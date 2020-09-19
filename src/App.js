@@ -2,10 +2,13 @@ import React from 'react'
 // import logo from './logo.svg'
 import './App.css'
 
+import Stepper from './components/Stepper'
+
 function App() {
   return (
-    <div className="App">
-      <h1>App</h1>
+    // <div className="App">
+    <div>
+      <Stepper />
     </div>
   )
 }
