@@ -31,7 +31,7 @@ function getSteps() {
   ];
 }
 
-export default function HorizontalLinearStepper() {
+export default function HorizontalLinearStepper(props) {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
@@ -82,13 +82,22 @@ export default function HorizontalLinearStepper() {
   let _getChild = () => {
     switch(activeStep) {
       case 0:
-        return <Uploader />
+        return <Uploader image={props.image} setImage={props.setImage}/>
       case 1:
         return <Selector />
       case 2:
         return <Enhancer />
       case 3:
         return <Downloader />
+    }
+  }
+
+  let _isDisabled = (stepNumber) => {
+    switch (stepNumber) {
+      case 0:
+        return props.image === null
+      default:
+        return true
     }
   }
 
@@ -144,6 +153,7 @@ export default function HorizontalLinearStepper() {
                 color="primary"
                 onClick={handleNext}
                 className={classes.button}
+                disabled={_isDisabled(activeStep)}
               >
                 Некст
               </Button>
