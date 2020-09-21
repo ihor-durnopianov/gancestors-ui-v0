@@ -1,22 +1,36 @@
-import React, { Component } from 'react'
+import React from 'react'
+import {Button} from '@material-ui/core'
 
-export class Uploader extends Component {
-  state = {
-    image: null
-  }
+import useStyles from '../style'
 
-  render() {
-    return (
+export function Uploader(props) {
+  const classes = useStyles()
+  return (
+    <div>
       <div>
-        <img src={this.props.image} alt=""/>
-        <input type="file"
+        {props.image && <img src={props.image} alt=""/>}
+      </div>
+      {/* <input type="file"
+        onInput={(e) => {
+          props.setImage(_readFile(e.target.files[0]))
+        }}
+      /> */}
+      <Button
+        variant="contained"
+        component="label"
+        style={props.image ? {display: "none"} : {}}
+      >
+        Выберите фото
+        <input
+          type="file"
+          style={{ display: "none" }}
           onInput={(e) => {
-            this.props.setImage(_readFile(e.target.files[0]))
+            props.setImage(_readFile(e.target.files[0]))
           }}
         />
-      </div>
-    )
-  }
+      </Button>
+    </div>
+  )
 }
 
 function _readFile(file) {

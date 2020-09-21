@@ -1,6 +1,6 @@
 // (Mostly) copied from https://material-ui.com/components/steppers/
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
@@ -12,18 +12,7 @@ import Selector from './Selector'
 import Enhancer from './Enhancer'
 import Downloader from './Downloader'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: '100%',
-  },
-  button: {
-    marginRight: theme.spacing(1),
-  },
-  instructions: {
-    marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(1),
-  },
-}));
+import useStyles from '../style'
 
 function getSteps() {
   return [
@@ -134,7 +123,9 @@ export default function HorizontalLinearStepper(props) {
         })}
       </Stepper>
       {_getChild()}
-      <div>
+      {/* TODO: use spacing instead */}
+      <br/>
+      <div style={{textAlign: 'right'}}>
         {activeStep === steps.length - 1 ? (
           <div>
             <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
