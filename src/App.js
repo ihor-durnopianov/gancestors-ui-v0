@@ -16,7 +16,10 @@ class App extends Component {
   }
 
   setCropped = (image) => {
-    this.setState({cropped: image})
+    this.setState({
+      cropped: image,
+      enhanced: null
+    })
   }
 
   // Might be better to take image as input
