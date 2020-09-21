@@ -25,6 +25,15 @@ class App extends Component {
     this.setState({enhanced: enhanced})
   }
 
+  resetState = () => {
+    // TODO: refactor to use single initial state
+    this.setState({
+      image: null,
+      cropped: null,
+      enhanced: null
+    })
+  }
+
   render() {
     return (
       // <div className="App">
@@ -36,6 +45,7 @@ class App extends Component {
           cropped={this.state.cropped}
           enhance={this.enhance}
           enhanced={this.state.enhanced}
+          resetState={this.resetState}
         />
       </div>
     )

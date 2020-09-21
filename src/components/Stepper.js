@@ -77,6 +77,7 @@ export default function HorizontalLinearStepper(props) {
 
   const handleReset = () => {
     setActiveStep(0);
+    props.resetState()
   };
 
   let _getChild = () => {
