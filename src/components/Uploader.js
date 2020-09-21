@@ -8,7 +8,7 @@ export class Uploader extends Component {
   render() {
     return (
       <div>
-        <img src={this.props.image}/>
+        <img src={this.props.image} alt=""/>
         <input type="file"
           onInput={(e) => {
             this.props.setImage(_readFile(e.target.files[0]))

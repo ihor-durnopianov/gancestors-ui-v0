@@ -4,9 +4,9 @@ export class Enhancer extends Component {
   render() {
     return (
       <div>
-        <img style={{ maxWidth: '100%' }} src={this.props.cropped} />
+        <img style={{ maxWidth: '100%' }} src={this.props.cropped} alt=""/>
         <button onClick={this.props.enhance}>Enhance</button>
-        <img style={{ maxWidth: '100%' }} src={this.props.enhanced} />
+        <img style={{ maxWidth: '100%' }} src={this.props.enhanced} alt=""/>
       </div>
     )
   }

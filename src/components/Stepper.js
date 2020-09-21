@@ -96,6 +96,8 @@ export default function HorizontalLinearStepper(props) {
         )
       case 3:
         return <Downloader enhanced={props.enhanced}/>
+      default:
+        return "Should never happen"
     }
   }
 

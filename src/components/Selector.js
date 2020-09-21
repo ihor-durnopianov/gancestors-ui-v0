@@ -1,5 +1,4 @@
 // Almost completely taken from react-image-crop docs
-import ReactDOM from 'react-dom';
 import React, { PureComponent } from 'react';
 import ReactCrop from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css';
@@ -90,8 +89,9 @@ export default class Selector extends PureComponent {
   }
 
   render() {
-    this.state.src = this.props.image
-    const { crop, croppedImageUrl, src } = this.state;
+    // const { crop, croppedImageUrl, src } = this.state;
+    const crop = this.state.crop,
+      src = this.props.image
 
     return (
       <div className="App">
