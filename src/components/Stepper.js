@@ -86,9 +86,15 @@ export default function HorizontalLinearStepper(props) {
       case 1:
         return <Selector image={props.image} setCropped={props.setCropped}/>
       case 2:
-        return <Enhancer cropped={props.cropped}/>
+        return (
+          <Enhancer
+            cropped={props.cropped}
+            enhance={props.enhance}
+            enhanced={props.enhanced}
+          />
+        )
       case 3:
-        return <Downloader />
+        return <Downloader enhanced={props.enhanced}/>
     }
   }
 
@@ -98,6 +104,8 @@ export default function HorizontalLinearStepper(props) {
         return props.image === null
       case 1:
         return props.cropped === null
+      case 2:
+        return props.enhanced === null
       default:
         return false
     }

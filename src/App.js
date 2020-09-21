@@ -7,7 +7,8 @@ import Stepper from './components/Stepper'
 class App extends Component {
   state = {
     image: null,
-    cropped: null
+    cropped: null,
+    enhanced: null
   }
 
   setImage = (image) => {
@@ -16,6 +17,12 @@ class App extends Component {
 
   setCropped = (image) => {
     this.setState({cropped: image})
+  }
+
+  // Might be better to take image as input
+  enhance = () => {
+    let enhanced = this.state.cropped
+    this.setState({enhanced: enhanced})
   }
 
   render() {
@@ -27,6 +34,8 @@ class App extends Component {
           setImage={this.setImage}
           setCropped={this.setCropped}
           cropped={this.state.cropped}
+          enhance={this.enhance}
+          enhanced={this.state.enhanced}
         />
       </div>
     )
