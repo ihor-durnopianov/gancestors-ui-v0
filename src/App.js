@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 // import logo from './logo.svg'
 import './App.css'
 
@@ -24,8 +25,18 @@ class App extends Component {
 
   // Might be better to take image as input
   enhance = () => {
-    let enhanced = this.state.cropped
-    this.setState({enhanced: enhanced})
+    axios.post("http://127.0.0.1:4158/enhance", {image: this.state.cropped})
+      .then(response => {
+        if (response.data.error !== undefined) {
+          // TODO: raise errors as pop-ups (?)
+          console.log(response.data.error)
+        }
+        this.setState({enhanced: response.data.image})
+      })
+      .catch(error => {
+        // TODO: raise errors as pop-ups (?)
+        console.log(error.message)
+      })
   }
 
   resetState = () => {
