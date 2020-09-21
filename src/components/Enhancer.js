@@ -4,7 +4,9 @@ export class Enhancer extends Component {
   render() {
     return (
       <div>
-        Enhancer works
+        {this.props.cropped && (
+          <img alt="Crop" style={{ maxWidth: '100%' }} src={this.props.cropped} />
+        )}
       </div>
     )
   }
