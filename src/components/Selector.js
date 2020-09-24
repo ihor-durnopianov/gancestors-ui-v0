@@ -94,7 +94,7 @@ export default class Selector extends PureComponent {
       src = this.props.image
 
     return (
-      <div className="App">
+      <div id="selector">
         {src && (
           <ReactCrop
             src={src}
