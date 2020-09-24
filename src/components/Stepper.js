@@ -23,6 +23,8 @@ function getSteps() {
 export default function HorizontalLinearStepper(props) {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
+  if (activeStep === 0 && props.image !== null)
+    setActiveStep(1)
   const [skipped, setSkipped] = React.useState(new Set());
   const steps = getSteps();
 
@@ -125,7 +127,9 @@ export default function HorizontalLinearStepper(props) {
       {_getChild()}
       {/* TODO: use spacing instead */}
       <br/>
-      <div style={{textAlign: 'right'}}>
+      <div style={{
+        textAlign: 'right', display: activeStep === 0 ? 'none' : 'block'
+      }}>
         {activeStep === steps.length - 1 ? (
           <div>
             <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
@@ -138,7 +142,11 @@ export default function HorizontalLinearStepper(props) {
         ) : (
           <div>
             <div>
-              <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
+              <Button disabled={activeStep === 0} onClick={handleBack}
+                className={classes.button} style={{
+                  display: activeStep === 1 ? 'none' : 'inline'
+                }}
+              >
                 Бэк
               </Button>
               {isStepOptional(activeStep) && (
