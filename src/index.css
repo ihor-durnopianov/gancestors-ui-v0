@@ -15,4 +15,5 @@ code {
 img {
   max-height: 75vh;
   object-fit: scale-down;
+  max-width: 100%;
 }
