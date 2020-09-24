@@ -23,11 +23,13 @@ function getSteps() {
 export default function HorizontalLinearStepper(props) {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
-  // 4 testing
-  // let [activeStep, setActiveStep] = React.useState(0);
-  // activeStep = 1
   if (activeStep === 0 && props.image !== null)
     setActiveStep(1)
+  // // 4 testing
+  // if (activeStep === 1 && props.cropped !== null) {
+  //   setActiveStep(2)
+  // }
+
   const [skipped, setSkipped] = React.useState(new Set());
   const steps = getSteps();
 
@@ -110,7 +112,9 @@ export default function HorizontalLinearStepper(props) {
 
   return (
     <div className={classes.root}>
-      <Stepper activeStep={activeStep}>
+      <Stepper activeStep={activeStep} style={{
+        paddingBottom: '2.25em'
+      }}>
         {steps.map((label, index) => {
           const stepProps = {};
           const labelProps = {};

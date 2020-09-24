@@ -22,7 +22,7 @@ export function Uploader(props) {
         style={{
           display: props.image ? "none" : 'inline',
           borderRadius: '1.5em',
-          top: '35vh',
+          top: '32.5vh',
           padding: '.85em',
           paddingLeft: '1.25em',
           paddingRight: '1.25em',
