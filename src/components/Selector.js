@@ -9,7 +9,7 @@ export default class Selector extends PureComponent {
     src: null,
     crop: {
       unit: '%',
-      width: 30,
+      width: 18,
       aspect: 16 / 16,
     },
   };
