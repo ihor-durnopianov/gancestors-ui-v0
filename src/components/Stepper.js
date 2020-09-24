@@ -23,6 +23,9 @@ function getSteps() {
 export default function HorizontalLinearStepper(props) {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
+  // 4 testing
+  // let [activeStep, setActiveStep] = React.useState(0);
+  // activeStep = 1
   if (activeStep === 0 && props.image !== null)
     setActiveStep(1)
   const [skipped, setSkipped] = React.useState(new Set());
@@ -166,8 +169,21 @@ export default function HorizontalLinearStepper(props) {
                 onClick={handleNext}
                 className={classes.button}
                 disabled={_isDisabled(activeStep)}
+                style={{
+                  // borderRadius: '15em',
+                  // padding: '0',
+                  minWidth: '0',
+                  width: '3.5em',
+                  height: '3.5em',
+                  borderRadius: '3.5em'
+                  // color: '#FFFFFF'
+                }}
               >
-                Некст
+                <i class="fas fa-arrow-right" style={{
+                  fontSize: '2em',
+                  color: '#FFFFFF'
+                  // color: _isDisabled(activeStep) ? '' : '#3f51b5'
+                }}></i>
               </Button>
             </div>
           </div>
