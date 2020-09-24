@@ -29,6 +29,10 @@ export function Uploader(props) {
           fontSize: '.9em'
         }}
       >
+        <i class="fas fa-arrow-up" style={{
+          paddingRight: '.5em',
+          fontSize: '1.125em'
+        }}></i>
         Выберите фото
         <input
           type="file"
