@@ -18,7 +18,16 @@ export function Uploader(props) {
       <Button
         variant="contained"
         component="label"
-        style={props.image ? {display: "none"} : {}}
+        color='primary'
+        style={{
+          display: props.image ? "none" : 'inline',
+          borderRadius: '1.5em',
+          top: '35vh',
+          padding: '.85em',
+          paddingLeft: '1.25em',
+          paddingRight: '1.25em',
+          fontSize: '.9em'
+        }}
       >
         Выберите фото
         <input
