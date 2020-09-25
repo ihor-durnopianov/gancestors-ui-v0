@@ -15,7 +15,7 @@ export function Enhancer(props) {
   }
   return (
     <div id="enhancer">
-      <Grid container spacing={0} justify='space-around' style={{
+      <Grid container spacing={0} justify='space-evenly' style={{
         height: `${_getHeight()}px`,
         maxHeight: '75vh'
       }}>
@@ -25,7 +25,7 @@ export function Enhancer(props) {
           {/* div added to make it respond to position the same way as
               the other one */}
           <div style={{
-            marginTop: '12.5%',
+            marginTop: '15%',
             // maxHeight: '100%',
           }}>
             <img style={{
@@ -35,7 +35,7 @@ export function Enhancer(props) {
               // Ugly, but how to do better?
               position: 'relative',
               top: '50%',
-              padding: '1em',
+              // padding: '1em',
             }} src={props.cropped} alt=""/>
           </div>
         </Grid>
@@ -77,7 +77,7 @@ export function Enhancer(props) {
             </div>
           ) : (
             <div style={{
-              marginTop: '12.5%'
+              marginTop: '15%'
             }}>
               <img id="enhanced" style={{
                 maxWidth: '100%',
@@ -86,7 +86,7 @@ export function Enhancer(props) {
                 // Ugly, but how to do better?
                 position: 'relative',
                 top: '50%',
-                padding: '1em',
+                // padding: '1em',
               }} src={props.enhanced} alt=""/>
             </div>
           )}
