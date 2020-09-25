@@ -46,6 +46,7 @@ export function Enhancer(props) {
               variant="contained"
               color="primary"
               onClick={props.enhance}
+              disabled={props.requested}
               className={classes.button}
               style={{
                 minWidth: '0',
