@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import Grid from '@material-ui/core/Grid'
+import React from 'react'
 import Button from '@material-ui/core/Button'
 
 import useStyles from '../style'
@@ -46,7 +45,7 @@ export function Downloader(props) {
                 marginTop:'0.75em'
               }}
             >
-              <i class="fas fa-arrow-down" style={{
+              <i className="fas fa-arrow-down" style={{
                 // fontSize: '2em',
                 color: '#FFFFFF',
                 paddingRight: '.5em',

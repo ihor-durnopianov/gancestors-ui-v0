@@ -1,10 +1,7 @@
 import React from 'react'
 import {Button} from '@material-ui/core'
 
-import useStyles from '../style'
-
 export function Uploader(props) {
-  const classes = useStyles()
   return (
     <div>
       <div>
@@ -29,7 +26,7 @@ export function Uploader(props) {
           fontSize: '.9em'
         }}
       >
-        <i class="fas fa-arrow-up" style={{
+        <i className="fas fa-arrow-up" style={{
           paddingRight: '.5em',
           fontSize: '1.125em'
         }}></i>

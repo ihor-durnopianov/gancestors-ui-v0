@@ -70,10 +70,10 @@ export default function HorizontalLinearStepper(props) {
     });
   };
 
-  const handleReset = () => {
-    setActiveStep(0);
-    props.resetState()
-  };
+  // const handleReset = () => {
+  //   setActiveStep(0);
+  //   props.resetState()
+  // };
 
   let _getChild = () => {
     switch(activeStep) {
@@ -154,7 +154,7 @@ export default function HorizontalLinearStepper(props) {
                   display: activeStep === 1 ? 'none' : 'inline'
                 }}
               >
-                <i class="fas fa-arrow-left" style={{
+                <i className="fas fa-arrow-left" style={{
                   fontSize: '2em',
                   // color: _isDisabled(activeStep) ? '' : '#3f51b5'
                 }}></i>
@@ -186,7 +186,7 @@ export default function HorizontalLinearStepper(props) {
                   // color: '#FFFFFF'
                 }}
               >
-                <i class="fas fa-arrow-right" style={{
+                <i className="fas fa-arrow-right" style={{
                   fontSize: '2em',
                   color: '#FFFFFF'
                   // color: _isDisabled(activeStep) ? '' : '#3f51b5'

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 import CircularProgress from '@material-ui/core/CircularProgress'
@@ -57,7 +57,7 @@ export function Enhancer(props) {
                 top: '35%'
               }}
             >
-              <i class="fas fa-magic" style={{
+              <i className="fas fa-magic" style={{
                 fontSize: '2em',
                 color: '#FFFFFF'
               }}></i>
