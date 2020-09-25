@@ -25,7 +25,7 @@ export function Downloader(props) {
           // Ugly, but how to do better?  Moreover, why without marginTop?
           position: 'relative',
           top: '50%',
-          padding: '2.5em'
+          padding: '1.5em'
           // marginTop: '-37.5%'
         }} src={props.enhanced} alt=""/>
       </div>
@@ -43,6 +43,7 @@ export function Downloader(props) {
                 // paddingLeft: '1em',
                 // paddingRight: '1em',
                 marginRight: '0',
+                marginTop:'0.75em'
               }}
             >
               <i class="fas fa-arrow-down" style={{

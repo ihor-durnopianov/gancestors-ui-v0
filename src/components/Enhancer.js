@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
+import CircularProgress from '@material-ui/core/CircularProgress'
 
 import useStyles from '../style'
 
@@ -18,16 +19,25 @@ export function Enhancer(props) {
         height: `${_getHeight()}px`,
         maxHeight: '75vh'
       }}>
-        <Grid item xs={5}>
-          <img style={{
-            maxWidth: '100%',
-            width: '75%',
-            objectFit: 'fill',
-            // Ugly, but how to do better?
-            position: 'relative',
-            top: '50%',
-            marginTop: '-37.5%'
-          }} src={props.cropped} alt=""/>
+        <Grid item xs={5} style={{
+          // maxHeight: '100%'
+        }}>
+          {/* div added to make it respond to position the same way as
+              the other one */}
+          <div style={{
+            marginTop: '12.5%',
+            // maxHeight: '100%',
+          }}>
+            <img style={{
+              maxWidth: '100%',
+              minWidth: '75%',
+              objectFit: 'fill',
+              // Ugly, but how to do better?
+              position: 'relative',
+              top: '50%',
+              padding: '1em',
+            }} src={props.cropped} alt=""/>
+          </div>
         </Grid>
         <Grid item xs={1} style={{
           width: '100px'
@@ -53,15 +63,32 @@ export function Enhancer(props) {
             </Button>
         </Grid>
         <Grid item xs={5}>
-          <img id="enhanced" style={{
-            maxWidth: '100%',
-            width: '75%',
-            objectFit: 'fill',
-            // Ugly, but how to do better?
-            position: 'relative',
-            top: '50%',
-            marginTop: '-37.5%'
-          }} src={props.enhanced} alt=""/>
+          {props.requested && props.enhanced === null ? (
+            <div style={{
+              maxWidth: '100%',
+              width: '75%',
+              objectFit: 'fill',
+              // Ugly, but how to do better?
+              position: 'relative',
+              top: '36.125%',
+            }}>
+              <CircularProgress />
+            </div>
+          ) : (
+            <div style={{
+              marginTop: '12.5%'
+            }}>
+              <img id="enhanced" style={{
+                maxWidth: '100%',
+                minWidth: '75%',
+                objectFit: 'fill',
+                // Ugly, but how to do better?
+                position: 'relative',
+                top: '50%',
+                padding: '1em',
+              }} src={props.enhanced} alt=""/>
+            </div>
+          )}
         </Grid>
       </Grid>
     </div>

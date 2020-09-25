@@ -87,6 +87,7 @@ export default function HorizontalLinearStepper(props) {
             cropped={props.cropped}
             enhance={props.enhance}
             enhanced={props.enhanced}
+            requested={props.requested}
           />
         )
       case 3:
