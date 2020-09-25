@@ -153,7 +153,10 @@ export default function HorizontalLinearStepper(props) {
                   display: activeStep === 1 ? 'none' : 'inline'
                 }}
               >
-                Бэк
+                <i class="fas fa-arrow-left" style={{
+                  fontSize: '2em',
+                  // color: _isDisabled(activeStep) ? '' : '#3f51b5'
+                }}></i>
               </Button>
               {isStepOptional(activeStep) && (
                 <Button
