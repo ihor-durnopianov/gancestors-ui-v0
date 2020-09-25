@@ -10,8 +10,7 @@ export function Enhancer(props) {
     let selector = document.getElementById('selector')
     if (selector !== null)
       return selector.clientHeight
-    let enhancer = document.getElementById('enhancer')
-      return enhancer.clientHeight
+    return document.getElementById('enhancer').clientHeight
   }
   return (
     <div id="enhancer">
@@ -54,7 +53,7 @@ export function Enhancer(props) {
             </Button>
         </Grid>
         <Grid item xs={5}>
-          <img style={{
+          <img id="enhanced" style={{
             maxWidth: '100%',
             width: '75%',
             objectFit: 'fill',

@@ -22,7 +22,9 @@ class App extends Component {
   setCropped = (image) => {
     this.setState({
       cropped: image,
-      enhanced: null
+      enhanced: null,
+      // // 4 testing
+      // enhanced: image
     })
   }
 

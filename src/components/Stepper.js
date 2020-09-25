@@ -26,9 +26,8 @@ export default function HorizontalLinearStepper(props) {
   if (activeStep === 0 && props.image !== null)
     setActiveStep(1)
   // // 4 testing
-  // if (activeStep === 1 && props.cropped !== null) {
-  //   setActiveStep(2)
-  // }
+  // if (activeStep === 1 && props.cropped !== null) {setActiveStep(2)}
+  // // if (activeStep === 2 && props.enhanced !== null) {setActiveStep(3)}
 
   const [skipped, setSkipped] = React.useState(new Set());
   const steps = getSteps();
@@ -139,12 +138,12 @@ export default function HorizontalLinearStepper(props) {
       }}>
         {activeStep === steps.length - 1 ? (
           <div>
-            <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
+            {/* <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
               Бэк
             </Button>
             <Button onClick={handleReset} className={classes.button}>
               Ресет
-            </Button>
+            </Button> */}
           </div>
         ) : (
           <div>
