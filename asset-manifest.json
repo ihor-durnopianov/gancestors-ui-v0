@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/gancestors-ui-v0/static/css/main.2661ccca.chunk.css",
+    "main.js": "/gancestors-ui-v0/static/js/main.12f4244d.chunk.js",
+    "main.js.map": "/gancestors-ui-v0/static/js/main.12f4244d.chunk.js.map",
+    "runtime-main.js": "/gancestors-ui-v0/static/js/runtime-main.3caf0215.js",
+    "runtime-main.js.map": "/gancestors-ui-v0/static/js/runtime-main.3caf0215.js.map",
+    "static/css/2.1bce3852.chunk.css": "/gancestors-ui-v0/static/css/2.1bce3852.chunk.css",
+    "static/js/2.51a57152.chunk.js": "/gancestors-ui-v0/static/js/2.51a57152.chunk.js",
+    "static/js/2.51a57152.chunk.js.map": "/gancestors-ui-v0/static/js/2.51a57152.chunk.js.map",
+    "index.html": "/gancestors-ui-v0/index.html",
+    "precache-manifest.370c114bf0789574330077d2759e01bc.js": "/gancestors-ui-v0/precache-manifest.370c114bf0789574330077d2759e01bc.js",
+    "service-worker.js": "/gancestors-ui-v0/service-worker.js",
+    "static/css/2.1bce3852.chunk.css.map": "/gancestors-ui-v0/static/css/2.1bce3852.chunk.css.map",
+    "static/css/main.2661ccca.chunk.css.map": "/gancestors-ui-v0/static/css/main.2661ccca.chunk.css.map",
+    "static/js/2.51a57152.chunk.js.LICENSE.txt": "/gancestors-ui-v0/static/js/2.51a57152.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3caf0215.js",
+    "static/css/2.1bce3852.chunk.css",
+    "static/js/2.51a57152.chunk.js",
+    "static/css/main.2661ccca.chunk.css",
+    "static/js/main.12f4244d.chunk.js"
+  ]
+}
