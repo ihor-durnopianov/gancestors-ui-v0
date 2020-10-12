@@ -1,3 +1,15 @@
+# GANcestors UI, v0
+
+(Probably) simplest possible user interface to [image enhancement utility I've been working on recently](https://github.com/tetiana-nizdropa/ancestors/tree/feature/back-end-mvp/Enhancer)
+
+**NOTE**: as of now back-end is not deployed anywhere, UI refers to localhost
+
+TODO:
+* move to TypeScript
+* refactor
+
+<hr>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
