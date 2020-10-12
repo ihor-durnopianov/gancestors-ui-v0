@@ -30,7 +30,7 @@ export function Uploader(props) {
           paddingRight: '.5em',
           fontSize: '1.125em'
         }}></i>
-        Выберите фото
+        Загрузите фото
         <input
           type="file"
           style={{ display: "none" }}

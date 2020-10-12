@@ -36,13 +36,15 @@ class App extends Component {
     axios.post("http://127.0.0.1:4158/enhance", {image: this.state.cropped})
       .then(response => {
         if (response.data.error !== undefined) {
-          window.alert(`Сервер упал с "${response.data.error}", сорри`)
+          window.alert(
+            `Сервер вернул "${response.data.error}", свяжитесь с автором`
+          )
           this.setState({requested: false})
         }
         this.setState({enhanced: response.data.image})
       })
       .catch(error => {
-        window.alert("Сервер оффлайн, сорри")
+        window.alert("Сервер offline")
         this.setState({requested: false})
       })
   }
