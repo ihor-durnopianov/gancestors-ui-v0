@@ -1,6 +1,6 @@
 // (Mostly) copied from https://material-ui.com/components/steppers/
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
@@ -12,28 +12,23 @@ import Selector from './Selector'
 import Enhancer from './Enhancer'
 import Downloader from './Downloader'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: '100%',
-  },
-  button: {
-    marginRight: theme.spacing(1),
-  },
-  instructions: {
-    marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(1),
-  },
-}));
+import useStyles from '../style'
 
 function getSteps() {
   return [
-    'Загрузите фото', 'Выберите нужное', 'Подтвердите обработку', 'Сохраните себе'
+    'Загрузите фото', 'Выделите портрет', 'Подтвердите обработку', 'Сохраните'
   ];
 }
 
 export default function HorizontalLinearStepper(props) {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
+  if (activeStep === 0 && props.image !== null)
+    setActiveStep(1)
+  // // 4 testing
+  // if (activeStep === 1 && props.cropped !== null) {setActiveStep(2)}
+  // // if (activeStep === 2 && props.enhanced !== null) {setActiveStep(3)}
+
   const [skipped, setSkipped] = React.useState(new Set());
   const steps = getSteps();
 
@@ -75,10 +70,10 @@ export default function HorizontalLinearStepper(props) {
     });
   };
 
-  const handleReset = () => {
-    setActiveStep(0);
-    props.resetState()
-  };
+  // const handleReset = () => {
+  //   setActiveStep(0);
+  //   props.resetState()
+  // };
 
   let _getChild = () => {
     switch(activeStep) {
@@ -92,6 +87,7 @@ export default function HorizontalLinearStepper(props) {
             cropped={props.cropped}
             enhance={props.enhance}
             enhanced={props.enhanced}
+            requested={props.requested}
           />
         )
       case 3:
@@ -116,7 +112,9 @@ export default function HorizontalLinearStepper(props) {
 
   return (
     <div className={classes.root}>
-      <Stepper activeStep={activeStep}>
+      <Stepper activeStep={activeStep} style={{
+        paddingBottom: '2.25em'
+      }}>
         {steps.map((label, index) => {
           const stepProps = {};
           const labelProps = {};
@@ -134,21 +132,32 @@ export default function HorizontalLinearStepper(props) {
         })}
       </Stepper>
       {_getChild()}
-      <div>
+      {/* TODO: use spacing instead */}
+      <br/>
+      <div style={{
+        textAlign: 'right', display: activeStep === 0 ? 'none' : 'block'
+      }}>
         {activeStep === steps.length - 1 ? (
           <div>
-            <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
+            {/* <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
               Бэк
             </Button>
             <Button onClick={handleReset} className={classes.button}>
               Ресет
-            </Button>
+            </Button> */}
           </div>
         ) : (
           <div>
             <div>
-              <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
-                Бэк
+              <Button disabled={activeStep === 0} onClick={handleBack}
+                className={classes.button} style={{
+                  display: activeStep === 1 ? 'none' : 'inline'
+                }}
+              >
+                <i className="fas fa-arrow-left" style={{
+                  fontSize: '2em',
+                  // color: _isDisabled(activeStep) ? '' : '#3f51b5'
+                }}></i>
               </Button>
               {isStepOptional(activeStep) && (
                 <Button
@@ -167,8 +176,21 @@ export default function HorizontalLinearStepper(props) {
                 onClick={handleNext}
                 className={classes.button}
                 disabled={_isDisabled(activeStep)}
+                style={{
+                  // borderRadius: '15em',
+                  // padding: '0',
+                  minWidth: '0',
+                  width: '3.5em',
+                  height: '3.5em',
+                  borderRadius: '3.5em'
+                  // color: '#FFFFFF'
+                }}
               >
-                Некст
+                <i className="fas fa-arrow-right" style={{
+                  fontSize: '2em',
+                  color: '#FFFFFF'
+                  // color: _isDisabled(activeStep) ? '' : '#3f51b5'
+                }}></i>
               </Button>
             </div>
           </div>

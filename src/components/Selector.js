@@ -8,8 +8,8 @@ export default class Selector extends PureComponent {
   state = {
     src: null,
     crop: {
-      unit: '%',
-      width: 30,
+      unit: 'px',
+      width: 128,
       aspect: 16 / 16,
     },
   };
@@ -94,7 +94,9 @@ export default class Selector extends PureComponent {
       src = this.props.image
 
     return (
-      <div className="App">
+      <div id="selector" style={{
+        minHeight: '75vh'
+      }}>
         {src && (
           <ReactCrop
             src={src}
